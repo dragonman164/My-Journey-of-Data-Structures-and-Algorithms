@@ -28,9 +28,9 @@ for i in range(1, 10**3 + 1):
         prime.append(i)
 
 
-# for elem in combinations(prime,5):
-#     if elem[0] > 7:
-#         break
-#     if checkProperty(elem):
-#         print(elem)
-#         break
+for elem in combinations(prime,5):
+    if elem[0] > 7:
+        break
+    if checkProperty(elem):
+        print(elem)
+        break
