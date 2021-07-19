@@ -30,7 +30,6 @@ void solve()
     }
     cout<<data[n][capacity];
 
-    
 
     
 
