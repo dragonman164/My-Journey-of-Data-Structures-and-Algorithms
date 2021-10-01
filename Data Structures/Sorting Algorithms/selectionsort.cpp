@@ -1,31 +1,29 @@
-#include<bits/stdc++.h> 
+#include <bits/stdc++.h>
+#include "random.h"
 using namespace std;
-void solve()
-{
-   int n;
-   cout<<"Enter no. of elements in the array: ";
-   cin>>n;
-   vector<int> x(n);
-   cout<<"Enter elements of array: ";
-   for(int i = 0;i<n;i++)
-   { 
-       cin>>x[i];
-   }
-   for(int i = 0;i<n-1;i++)
-   {   
-       for(int j = i+1;j<n;j++)
-       {
-           if(x[i]>x[j])
-           swap(x[i],x[j]);
-       }
-   }
-   cout<<"Sorted array:\n";
-   for(int elem:x)
-   cout<<elem<<" ";
 
+void selectionSort(vector<int> &x)
+{
+    int n = x.size();
+
+    for (int i = 0; i < n-1; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (x[i] > x[j])
+                swap(x[i], x[j]);
+        }
+    }
+    
 }
+
 int main()
 {
-solve();
-return 0;
+    vector<int> v;
+    populate(v,10);
+    print(v,"Unsorted");
+    selectionSort(v);
+    print(v,"Sorted  ");
+
+    return 0;
 }

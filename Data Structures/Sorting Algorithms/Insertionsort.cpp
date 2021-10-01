@@ -1,35 +1,26 @@
-#include<bits/stdc++.h> 
+#include <bits/stdc++.h>
+#include "random.h"
 using namespace std;
-void solve()
+
+void insertionSort(vector<int> &x)
 {
-    int n;
-    cout<<"Enter no. of elements in array: ";
-    cin>>n;
-    vector<int> x(n);
-    cout<<"Enter elements of array: ";
-    for(int i = 0;i<n;i++)
+    int n = x.size();
+    for (int i = 1; i < n; i++)
     {
-        cin>>x[i];
-    }
-    for(int i = 1;i<n;i++)
-    {
-        int temp = x[i],j=i;
-        while(temp<x[j-1])
+        int j = i;
+        while (j>0 && x[j] < x[j - 1])
         {
-            x[j]=x[j-1];
-            j--;
+            swap(x[j],x[j--]);
         }
-        x[j]=temp;
     }
-
-    cout<<"Sorted Array is: ";
-    for(int elem:x)
-    cout<<elem<<" ";
-
 }
+
 int main()
 {
-
-solve();
-return 0;
+    vector<int> v;
+    populate(v, 10);
+    print(v, "Unsorted");
+    insertionSort(v);
+    print(v, "Sorted  ");
+    return 0;
 }
